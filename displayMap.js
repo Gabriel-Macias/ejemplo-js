@@ -27,7 +27,7 @@ function displayMap() {
 
         // Call Google Geocoding API
         fetch(geocodeAPIurl)
-        .then(function(response) => {
+        .then((response) => {
             return response.json();
           })
           .then(function(data) => {
