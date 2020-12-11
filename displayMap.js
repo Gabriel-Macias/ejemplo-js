@@ -27,10 +27,8 @@ function displayMap() {
 
         // Call Google Geocoding API
         fetch(geocodeAPIurl)
-        .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
+        .then((response) => response.json())
+          .then(function(data) {
             if (data.status != "OK" || "partial_match" in data.results[0]){
                 throw "Error!";
             } else {
@@ -61,10 +59,8 @@ function displayMap() {
             }    
 
           })
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
+          .then((response) => response.json())
+          .then(function(data) {
             // Adding the markers for the earthquakes
             var infowindow = new google.maps.InfoWindow();
             var marker, i, loc;
@@ -85,7 +81,7 @@ function displayMap() {
                 })(marker, i));
           }
         })
-          .catch((err) => {
+          .catch(function(err) {
             console.log(err);
             //alert("There was an error with the request. Verify the location name and try again.");
           })
