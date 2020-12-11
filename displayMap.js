@@ -18,12 +18,10 @@ function displayMap() {
         alert("Please enter a city name or location.");
     } else {
 
+        var map;
         const APIkey = "AIzaSyD4mIiEokVzr--ae22_CurC3Eeeq0y4gTQ";
         let cityAddress = cityName.replace(" ", "%20");
         let geocodeAPIurl = `https://maps.googleapis.com/maps/api/geocode/json?address=${cityAddress}&key=${APIkey}`;
-
-        //const response = fetch(geocodeAPIurl + cityAddress + "&key=" + APIkey);
-        //const geoJson = response.json(); //extract JSON from the http response
 
         // Call Google Geocoding API
         fetch(geocodeAPIurl)
@@ -42,8 +40,9 @@ function displayMap() {
                 // The location of the city
                 const cityLoc = {lat: data.results[0].geometry.location.lat, 
                                  lng: data.results[0].geometry.location.lng};
+
                 // The map, centered at the location
-                var map = new google.maps.Map(document.getElementById("map"), {
+                map = new google.maps.Map(document.getElementById("map"), {
                     zoom: 10,
                     center: cityLoc,
                 });
@@ -89,16 +88,5 @@ function displayMap() {
             console.log(err);
             //alert("There was an error with the request. Verify the location name and try again.");
           })
-
-
-        // Check that the location returned is correctly specified
-
-        /* call geocoding api
-        const userAction = async () => {
-          const response = await fetch(geocodeAPIurl + cityAddress + "&key=" + APIkey);
-          const myJson = await response.json(); //extract JSON from the http response
-          // do something with myJson
-        }*/
-
     }
 }
