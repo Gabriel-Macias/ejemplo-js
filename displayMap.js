@@ -53,6 +53,7 @@ function displayMap() {
                 let south = data.results[0].geometry.bounds.southwest.lat;
                 let west = data.results[0].geometry.bounds.southwest.lng;
 
+                // To avoid the Mixed content error
                 const corsUrl = "https://cors-anywhere.herokuapp.com/"
                 const earthAPIurl = "http://api.geonames.org/earthquakesJSON?username=Lorius2&maxRows=10";
 
