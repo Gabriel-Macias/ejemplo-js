@@ -53,9 +53,12 @@ function displayMap() {
                 let south = data.results[0].geometry.bounds.southwest.lat;
                 let west = data.results[0].geometry.bounds.southwest.lng;
 
+                const corsUrl = "https://cors-anywhere.herokuapp.com/"
                 const earthAPIurl = "http://api.geonames.org/earthquakesJSON?username=Lorius2&maxRows=10";
 
-                return fetch(earthAPIurl + `&north=${north}&south=${south}&east=${east}&west=${west}`);
+                return fetch(corsUrl + earthAPIurl + `&north=${north}&south=${south}&east=${east}&west=${west}`, {
+                    headers: {"X-Requested-With": "earthquakeMaps"}
+                });
             }    
 
           })
