@@ -11,8 +11,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script async defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDlv30T099k23uuv-b4N98slRCTXeNS1U"></script>
-
+    <!-- Main Script -->
     <script type="text/javascript" src="displayMap.js"></script>
+    <!-- Fix HTTP -> HTTPS request issue -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
   </head>
   <body>
     <!-- Input of location string -->
@@ -28,10 +30,10 @@
 
     <!-- Map and search history -->
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-7">
         <div id="map" class="z-depth-1-half map-container-5" style="height: 400px"></div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-5">
         <p>Search Location history</p>
         <ul id="searchHistory"></ul>
       </div>
