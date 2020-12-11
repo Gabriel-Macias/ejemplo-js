@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Earthquake Analyzer</title>>
+    <script 
+    defer 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDlv30T099k23uuv-b4N98slRCTXeNS1U&callback=initMap"
+    type="text/javascript"></script>
+    <!-- Bootstrap library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+    <!-- Input of location string -->
+    <div class="row">
+      <div class="col-sm-4">
+        <p>Ingresa el nombre de una ciudad/ubicación</p>
+        <input id="cityName" type="text" placeholder="City Name" size="25" />
+      </div>
+      <div class="col-sm-8">
+        <button type="button" id="runinfo" onclick="displayMap()">Display Earthquakes</button>
+      </div>
+    </div>
+
+    <!-- Map and search history -->
+    <div class="row">
+      <div class="col-sm-8" id="map">
+      </div>
+      <div class="col-sm-4">
+        <p>Search Location history</p>
+        <ul id="searchHistory"></ul>
+      </div>
+    </div>
+
+    <!-- List of top 10 largest earthquakes in the world in the last 12 months -->
+
+
+  </body>
+</html>
+<script type="text/javascript" src="displayMap.js"></script>
