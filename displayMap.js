@@ -7,7 +7,6 @@
     4. Call Google Maps API to display the map centered at the city with the other 10 earthquakes shown with markers and info
     5. Update search log history
 
-    Bonus: use async function to load top 10 earthquakes in the world in past 12 months
     parameters: none
     return: none
 */
@@ -73,7 +72,6 @@ function displayMap() {
             for (i = 0; i < data.earthquakes.length; i++) {
                 loc = {lat: data.earthquakes[i].lat, lng: data.earthquakes[i].lng}
                 marker = new google.maps.Marker({
-                    //position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                     position: {lat: data.earthquakes[i].lat, lng: data.earthquakes[i].lng},
                     map: map
                 });
@@ -87,8 +85,8 @@ function displayMap() {
           }
         })
           .catch(function(err) {
-            console.log(err);
-            //alert("There was an error with the request. Verify the location name and try again.");
+            //console.log(err);
+            alert("There was an error with the request. Verify the location name and try again.");
           })
     }
 }
