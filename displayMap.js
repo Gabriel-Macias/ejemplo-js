@@ -85,7 +85,7 @@ function displayMap() {
           }
         })
           .catch(function(err) {
-            //console.log(err);
+            // console.log(err);
             alert("There was an error with the request. Verify the location name and try again.");
           })
     }
