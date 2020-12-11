@@ -30,7 +30,7 @@ function displayMap() {
         .then((response) => {
             return response.json();
           })
-          .then(function(data) => {
+          .then((data) => {
             if (data.status != "OK" || "partial_match" in data.results[0]){
                 throw "Error!";
             } else {
@@ -61,10 +61,10 @@ function displayMap() {
             }    
 
           })
-          .then(function(response) => {
+          .then((response) => {
             return response.json();
           })
-          .then(function(data) => {
+          .then((data) => {
             // Adding the markers for the earthquakes
             var infowindow = new google.maps.InfoWindow();
             var marker, i, loc;
@@ -85,7 +85,7 @@ function displayMap() {
                 })(marker, i));
           }
         })
-          .catch(function(err) => {
+          .catch((err) => {
             console.log(err);
             //alert("There was an error with the request. Verify the location name and try again.");
           })
