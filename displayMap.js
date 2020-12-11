@@ -11,6 +11,9 @@
     parameters: none
     return: none
 */
+
+var map;
+
 function displayMap() {
     const cityName = document.getElementById("cityName").value;
     // check city name is provided
@@ -18,7 +21,6 @@ function displayMap() {
         alert("Please enter a city name or location.");
     } else {
 
-        var map;
         const APIkey = "AIzaSyD4mIiEokVzr--ae22_CurC3Eeeq0y4gTQ";
         let cityAddress = cityName.replace(" ", "%20");
         let geocodeAPIurl = `https://maps.googleapis.com/maps/api/geocode/json?address=${cityAddress}&key=${APIkey}`;
